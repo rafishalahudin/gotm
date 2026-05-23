@@ -6,6 +6,7 @@ import Ticker       from './components/Ticker'
 import Stats        from './components/Stats'
 import About        from './components/About'
 import ContentGrid  from './components/ContentGrid'
+import WhatsGroup   from './components/WhatsGroup'
 import Community    from './components/Community'
 import Footer       from './components/Footer'
 
@@ -21,6 +22,7 @@ export default function App() {
       <Stats />
       <About />
       <ContentGrid />
+      <WhatsGroup />
       <Community />
       <Footer />
     </>

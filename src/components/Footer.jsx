@@ -9,11 +9,8 @@ export default function Footer() {
     <footer>
       <div className="foot-inner">
         <div className="foot-brand">
-          <div className="foot-badge">GOTM</div>
-          <div>
-            <div className="foot-name">GOTM</div>
-            <div className="foot-sub">Girl of The Match</div>
-          </div>
+          <img src="/logo.png" alt="GOTM" className="foot-logo-img" />
+          <div className="foot-sub">Girl of The Match</div>
         </div>
 
         <div className="foot-links">

@@ -8,6 +8,8 @@ export default function Hero() {
 
       <div className="hero-inner">
         <div className="hero-left">
+          <img src="/logo.png" alt="GOTM" className="hero-mobile-logo" />
+
           <div className="eyebrow">
             <div className="eyebrow-dot" />
             <span className="eyebrow-label">#FootballForEveryone</span>
@@ -45,7 +47,7 @@ export default function Hero() {
             <div className="ring-outer" />
             <div className="ring-mid" />
             <div className="logo-disc">
-              <span className="logo-disc-text">GOTM</span>
+              <img src="/logo.png" alt="GOTM" className="logo-disc-img" />
             </div>
             <div className="orbit orbit-1">🏟️</div>
             <div className="orbit orbit-2">⚽</div>

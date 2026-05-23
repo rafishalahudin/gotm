@@ -31,14 +31,14 @@ function useCounter(end, duration = 1800) {
   return { count, ref }
 }
 
-function StatCard({ end, label, platform, delay }) {
+function StatCard({ end, label, platform, delay, static: staticVal }) {
   const { count, ref } = useCounter(end)
 
   return (
     <div className={`stat-card reveal reveal-d${delay}`} ref={ref}>
       <div className="stat-platform">{platform}</div>
       <div className="stat-num">
-        {end ? count.toLocaleString('id-ID') : '6'}
+        {staticVal ?? (end ? count.toLocaleString('id-ID') : '6')}
         <span className="accent">+</span>
       </div>
       <div className="stat-label">{label}</div>
@@ -59,9 +59,9 @@ export default function Stats() {
           </div>
         </div>
         <div className="stats-grid">
-          <StatCard end={3532} label="Followers & Terus Bertumbuh" platform="Instagram"     delay={1} />
-          <StatCard end={117}  label="Konten Dipublikasikan"        platform="Semua Platform" delay={2} />
-          <StatCard end={0}    label="Format Konten Unik"           platform="Format"         delay={3} />
+          <StatCard end={13449} label="Followers Semua Platform"  platform="Instagram + TikTok" delay={1} />
+          <StatCard end={117}   label="Konten Dipublikasikan"      platform="Semua Platform"     delay={2} />
+          <StatCard end={0}     label="Likes di TikTok"           platform="TikTok"             delay={3} static="1.4M" />
         </div>
       </div>
     </div>

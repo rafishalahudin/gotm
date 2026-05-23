@@ -6,9 +6,8 @@ export default function Nav() {
   return (
     <nav className="nav">
       <a href="#" className="nav-logo">
-        <div className="nav-badge">GOTM</div>
+        <img src="/logo.png" alt="GOTM" className="nav-logo-img" />
         <div className="nav-brand">
-          GOTM
           <small>Girl of The Match</small>
         </div>
       </a>
@@ -16,7 +15,7 @@ export default function Nav() {
       <ul className="nav-links">
         <li><a href="#about">Tentang</a></li>
         <li><a href="#content">Konten</a></li>
-        <li><a href="#community">Komunitas</a></li>
+        <li><a href="#komunitas">Komunitas</a></li>
         <li>
           <a href="https://www.instagram.com/gotm_id/" target="_blank" rel="noopener noreferrer" className="nav-cta">
             Follow Kami
@@ -33,7 +32,7 @@ export default function Nav() {
       <ul className={`mobile-menu${open ? ' open' : ''}`}>
         <li><a href="#about"     onClick={() => setOpen(false)}>Tentang</a></li>
         <li><a href="#content"   onClick={() => setOpen(false)}>Konten</a></li>
-        <li><a href="#community" onClick={() => setOpen(false)}>Komunitas</a></li>
+        <li><a href="#komunitas" onClick={() => setOpen(false)}>Komunitas</a></li>
         <li>
           <a href="https://www.instagram.com/gotm_id/" target="_blank" rel="noopener noreferrer" className="nav-cta">
             Follow Kami

@@ -17,6 +17,12 @@ const SOCIALS = [
     icon: '🔗',
     label: '@gotm_id di Threads',
   },
+  {
+    href: 'https://chat.whatsapp.com/KFrltU5XT87Gw9DULTvvuB',
+    cls: 'soc-wa',
+    icon: '💬',
+    label: 'Grup WhatsApp GOTM',
+  },
 ]
 
 export default function Community() {
