@@ -1,29 +1,31 @@
-import useReveal    from './hooks/useReveal'
-import Cursor       from './components/Cursor'
-import Nav          from './components/Nav'
-import Hero         from './components/Hero'
-import Ticker       from './components/Ticker'
-import Stats        from './components/Stats'
-import About        from './components/About'
-import ContentGrid  from './components/ContentGrid'
-import WhatsGroup   from './components/WhatsGroup'
-import Community    from './components/Community'
-import Footer       from './components/Footer'
+import useReveal  from './hooks/useReveal'
+import useTheme   from './hooks/useTheme'
+import Cursor     from './components/Cursor'
+import Nav        from './components/Nav'
+import Hero       from './components/Hero'
+import Ticker     from './components/Ticker'
+import About      from './components/About'
+import WhatWeDo   from './components/WhatWeDo'
+import Stats      from './components/Stats'
+import Partners   from './components/Partners'
+import Contact    from './components/Contact'
+import Footer     from './components/Footer'
 
 export default function App() {
   useReveal()
+  const { isDark, toggle } = useTheme()
 
   return (
     <>
       <Cursor />
-      <Nav />
+      <Nav isDark={isDark} onToggle={toggle} />
       <Hero />
       <Ticker />
-      <Stats />
       <About />
-      <ContentGrid />
-      <WhatsGroup />
-      <Community />
+      <WhatWeDo />
+      <Stats />
+      <Partners />
+      <Contact />
       <Footer />
     </>
   )

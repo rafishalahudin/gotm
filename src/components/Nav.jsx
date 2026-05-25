@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function Nav() {
+export default function Nav({ isDark, onToggle }) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -13,29 +13,41 @@ export default function Nav() {
       </a>
 
       <ul className="nav-links">
-        <li><a href="#about">Tentang</a></li>
-        <li><a href="#content">Konten</a></li>
-        <li><a href="#komunitas">Komunitas</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#whatwedo">What We Do</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#contact">Contact</a></li>
         <li>
           <a href="https://www.instagram.com/gotm_id/" target="_blank" rel="noopener noreferrer" className="nav-cta">
-            Follow Kami
+            Follow Us
           </a>
         </li>
       </ul>
 
-      <button className="nav-hamburger" onClick={() => setOpen(o => !o)} aria-label="Toggle menu">
-        <span />
-        <span />
-        <span />
-      </button>
+      <div className="nav-right">
+        <button
+          className="theme-toggle"
+          onClick={onToggle}
+          aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+        >
+          {isDark ? '☀️' : '🌙'}
+        </button>
+
+        <button className="nav-hamburger" onClick={() => setOpen(o => !o)} aria-label="Toggle menu">
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
 
       <ul className={`mobile-menu${open ? ' open' : ''}`}>
-        <li><a href="#about"     onClick={() => setOpen(false)}>Tentang</a></li>
-        <li><a href="#content"   onClick={() => setOpen(false)}>Konten</a></li>
-        <li><a href="#komunitas" onClick={() => setOpen(false)}>Komunitas</a></li>
+        <li><a href="#about"    onClick={() => setOpen(false)}>About</a></li>
+        <li><a href="#whatwedo" onClick={() => setOpen(false)}>What We Do</a></li>
+        <li><a href="#partners" onClick={() => setOpen(false)}>Partners</a></li>
+        <li><a href="#contact"  onClick={() => setOpen(false)}>Contact</a></li>
         <li>
           <a href="https://www.instagram.com/gotm_id/" target="_blank" rel="noopener noreferrer" className="nav-cta">
-            Follow Kami
+            Follow Us
           </a>
         </li>
       </ul>

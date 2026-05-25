@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 
 function useCounter(end, duration = 1800) {
-  const [count, setCount]     = useState(0)
-  const ref                   = useRef(null)
-  const hasRun                = useRef(false)
+  const [count, setCount] = useState(0)
+  const ref               = useRef(null)
+  const hasRun            = useRef(false)
 
   useEffect(() => {
     if (!end) return
@@ -23,7 +23,6 @@ function useCounter(end, duration = 1800) {
         }
       })
     }, { threshold: 0.3 })
-
     if (ref.current) obs.observe(ref.current)
     return () => obs.disconnect()
   }, [end, duration])
@@ -31,15 +30,15 @@ function useCounter(end, duration = 1800) {
   return { count, ref }
 }
 
-function StatCard({ end, label, platform, delay, static: staticVal }) {
+function StatCard({ end, suffix = '+', label, platform, delay, staticVal }) {
   const { count, ref } = useCounter(end)
 
   return (
     <div className={`stat-card reveal reveal-d${delay}`} ref={ref}>
       <div className="stat-platform">{platform}</div>
       <div className="stat-num">
-        {staticVal ?? (end ? count.toLocaleString('id-ID') : '6')}
-        <span className="accent">+</span>
+        {staticVal ?? (end ? count.toLocaleString('id-ID') : '0')}
+        <span className="accent">{suffix}</span>
       </div>
       <div className="stat-label">{label}</div>
     </div>
@@ -48,20 +47,23 @@ function StatCard({ end, label, platform, delay, static: staticVal }) {
 
 export default function Stats() {
   return (
-    <div className="section-divider">
+    <div className="section-divider" id="numbers">
       <div className="section-wrap">
         <div className="stats-head reveal">
           <div>
-            <div className="label">Angka Kami</div>
+            <div className="label">Our Reach</div>
             <div className="title">
-              KOMUNITAS<br />YANG NYATA
+              GOTM IN<br />NUMBERS
             </div>
           </div>
         </div>
-        <div className="stats-grid">
-          <StatCard end={13449} label="Followers Semua Platform"  platform="Instagram + TikTok" delay={1} />
-          <StatCard end={117}   label="Konten Dipublikasikan"      platform="Semua Platform"     delay={2} />
-          <StatCard end={0}     label="Likes di TikTok"           platform="TikTok"             delay={3} static="1.4M" />
+        <div className="stats-grid stats-grid-6">
+          <StatCard end={4923}  suffix="+"   label="TikTok Followers"       platform="TikTok"     delay={1} />
+          <StatCard end={1300}  suffix="+"   label="Instagram Followers"    platform="Instagram"  delay={2} />
+          <StatCard end={0}     suffix=""    label="TikTok Total Reach"     platform="TikTok"     delay={3} staticVal="8.5M" />
+          <StatCard end={0}     suffix=""    label="Instagram Reach"        platform="Instagram"  delay={1} staticVal="20K" />
+          <StatCard end={0}     suffix="%"   label="TikTok Engagement Rate" platform="TikTok"     delay={2} staticVal="115" />
+          <StatCard end={0}     suffix="%"   label="Instagram Engagement"   platform="Instagram"  delay={3} staticVal="22" />
         </div>
       </div>
     </div>

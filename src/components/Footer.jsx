@@ -1,7 +1,9 @@
-const LINKS = [
-  { href: 'https://www.instagram.com/gotm_id/', label: 'Instagram' },
-  { href: 'https://www.tiktok.com/@gotm_id',    label: 'TikTok'    },
-  { href: 'https://www.threads.net/@gotm_id',   label: 'Threads'   },
+const NAV = [
+  { href: '#about',    label: 'About' },
+  { href: '#whatwedo', label: 'What We Do' },
+  { href: '#numbers',  label: 'Numbers' },
+  { href: '#partners', label: 'Partners' },
+  { href: '#contact',  label: 'Contact' },
 ]
 
 export default function Footer() {
@@ -14,10 +16,8 @@ export default function Footer() {
         </div>
 
         <div className="foot-links">
-          {LINKS.map(({ href, label }) => (
-            <a key={label} href={href} target="_blank" rel="noopener noreferrer">
-              {label}
-            </a>
+          {NAV.map(({ href, label }) => (
+            <a key={label} href={href}>{label}</a>
           ))}
         </div>
 
