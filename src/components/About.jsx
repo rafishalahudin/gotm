@@ -20,7 +20,7 @@ function BallWatermark({ cls }) {
 
 const TEAM = [
   {
-    photo: '/team-daniela.png',
+    photo: '/team-daniela.jpg',
     name: 'Daniela',
     role: 'Storyteller & Producer',
     handle: '@d4nielakt',
@@ -29,7 +29,7 @@ const TEAM = [
     num: '07',
   },
   {
-    photo: '/team-wanda.png',
+    photo: '/team-wanda.jpg',
     name: 'Wanda',
     role: 'Visual Director',
     handle: '@waandaputrir',
@@ -38,7 +38,7 @@ const TEAM = [
     num: '10',
   },
   {
-    photo: '/team-rere.png',
+    photo: '/team-rere.jpg',
     name: 'Rere',
     role: 'Content Strategist',
     handle: '@deazeroo',

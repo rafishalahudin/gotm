@@ -29,7 +29,7 @@ function HeroDeco() {
 export default function Hero() {
   return (
     <section className="hero" id="home">
-      <img src="/hero-team.png" alt="" className="hero-bg-mobile" aria-hidden />
+      <img src="/hero-team.jpg" alt="" className="hero-bg-mobile" aria-hidden />
       <div className="hero-bg-mobile-overlay" aria-hidden />
       <div className="hero-grid" />
       <div className="orb1" />
@@ -76,7 +76,7 @@ export default function Hero() {
         <div className="hero-visual">
           <div className="hero-photo-wrap">
             <div className="hero-photo-ring" />
-            <img src="/hero-team.png" alt="GOTM Team" className="hero-photo-img" />
+            <img src="/hero-team.jpg" alt="GOTM Team" className="hero-photo-img" />
             <div className="orbit orbit-1">🏟️</div>
             <div className="orbit orbit-2">⚽</div>
             <div className="orbit orbit-3">🎙️</div>
